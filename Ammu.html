@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Ammu ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+    }
+
+    /* Envelope */
+    .envelope {
+        width: 340px;
+        height: 220px;
+        background: #ff8fa3;
+        position: relative;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        transition: 0.5s;
+    }
+
+    .flap {
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-left: 170px solid transparent;
+        border-right: 170px solid transparent;
+        border-top: 120px solid #ff4d6d;
+        transform-origin: top;
+        transition: 0.8s;
+    }
+
+    .envelope.open .flap {
+        transform: rotateX(180deg);
+    }
+
+    .open-text {
+        position: absolute;
+        width: 100%;
+        bottom: 20px;
+        text-align: center;
+        color: white;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+    }
+
+    /* Card */
+    .card {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 300px;
+        height: 400px;
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        opacity: 0;
+        transform: translateY(50px);
+        transition: 1s;
+        overflow-y: auto;
+    }
+
+    .envelope.open + .card {
+        opacity: 1;
+        transform: translateY(-220px);
+    }
+
+    h1 {
+        color: #ff4d6d;
+        text-align: center;
+    }
+
+    p {
+        color: #555;
+        font-size: 1.05em;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .heart {
+        text-align: center;
+        font-size: 2.5em;
+        animation: beat 1s infinite;
+        margin: 15px 0;
+    }
+
+    @keyframes beat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+</style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
+</audio>
+
+<div class="envelope" onclick="openEnvelope()">
+    <div class="flap"></div>
+    <div class="open-text">Tap to open 💌</div>
+</div>
+
+<div class="card">
+    <h1>Dear Ammu ❤️</h1>
+
+    <div class="heart">💖</div>
+
+    <p>
+        Loving you from a distance hasn’t been easy,  
+        but it has been **beautiful**.
+    </p>
+
+    <p>
+        Every mile between us has taught me patience,  
+        every silent night has reminded me how deeply  
+        my heart is connected to yours.
+    </p>
+
+    <p>
+        Even when I can’t hold your hand,  
+        I hold your love close to my soul.  
+        Even when I miss you the most,  
+        I smile — because you are worth every wait.
+    </p>
+
+    <p>
+        Ammu, distance didn’t weaken my love…  
+        it proved how real it is.
+    </p>
+
+    <p>
+        This Valentine’s Day, and every day after,  
+        **my heart chooses you — always.**
+    </p>
+
+    <p>💌 With all my love</p>
+</div>
+
+<script>
+    function openEnvelope() {
+        document.querySelector('.envelope').classList.add('open');
+        document.getElementById('music').play();
+    }
+</script>
+
+</body>
+</html>
